@@ -25,12 +25,12 @@
  */
 
 #include <stdlib.h>
+#include "bwt.h"
 
 #ifdef USE_MALLOC_WRAPPERS
 #  include "malloc_wrap.h"
 #endif
 
-typedef unsigned char ubyte_t;
 #define chr(i) (cs == sizeof(int) ? ((const int *)T)[i]:((const unsigned char *)T)[i])
 
 /* find the start or end of each bucket */
@@ -205,7 +205,7 @@ int is_sa(const ubyte_t *T, int *SA, int n)
  * @param n The length of the given string.
  * @return The primary index if no error occurred, -1 or -2 otherwise.
  */
-int is_bwt(ubyte_t *T, int n)
+int is_bwt(ubyte_t *T, bwtint_t n)
 {
 	int *SA, i, primary = 0;
 	SA = (int*)calloc(n+1, sizeof(int));

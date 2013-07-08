@@ -44,7 +44,7 @@
 #endif
 
 
-int is_bwt(ubyte_t *T, int n);
+int is_bwt(ubyte_t *T, bwtint_t n);
 
 int64_t bwa_seq_len(const char *fn_pac)
 {

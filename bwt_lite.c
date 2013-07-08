@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include "bwt.h"
 #include "bwt_lite.h"
 
 #ifdef USE_MALLOC_WRAPPERS
@@ -8,7 +9,7 @@
 #endif
 
 int is_sa(const uint8_t *T, uint32_t *SA, int n);
-int is_bwt(uint8_t *T, int n);
+int is_bwt(uint8_t *T, bwtint_t n);
 
 bwtl_t *bwtl_seq2bwtl(int len, const uint8_t *seq)
 {
